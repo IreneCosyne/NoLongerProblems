@@ -16,6 +16,10 @@ export return_index_which_array_contains
 export split_by, columns_containing
 export equals, morethan, Dict, lessthan
 export summary_factor
+export reverse_boolean_vector, exclude_rows_with_NA
+export get_values
+export join_in_all_common_columns, common_keys, concat_values
+export tss_tss_distance_bp
 
 include("Functions.jl")
 

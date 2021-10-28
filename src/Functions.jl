@@ -148,7 +148,7 @@ function common_noncommon(collectionA, collectionB)
 
 end
 
-export reverse_boolean_vector, exclude_rows_with_NA
+
 function reverse_boolean_vector(boolean_vector)
 
     new_boolean_vector = Array{Bool, 1}()
@@ -218,7 +218,7 @@ end
 
 
 
-export get_values
+
 function get_values(dict)
     values = []
     for key in keys(dict)
@@ -227,7 +227,8 @@ function get_values(dict)
     return values
 end
 
-export join_in_all_common_columns, common_keys, concat_values
+
+
 
 function join_in_all_common_columns(dataframe1, dataframe2)
     cols1 = names(dataframe1)
@@ -318,7 +319,6 @@ function dict_chr(data; order_by_TSS = false)
     end
     return new_dict
 end
-export tss_tss_distance_bp
 
 function tss_tss_distance_bp(genes_in_chromosome::DataFrame)
     count_genes = size(genes_in_chromosome)[1]
