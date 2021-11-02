@@ -20,7 +20,10 @@ export reverse_boolean_vector, exclude_rows_with_NA
 export get_values
 export join_in_all_common_columns, common_keys, concat_values
 export tss_tss_distance_bp
+export mean, select_string_columns
+export split_by_range,split_by_equally_sized
 
 include("Functions.jl")
+include("Functions2.jl")
 
 end # module
