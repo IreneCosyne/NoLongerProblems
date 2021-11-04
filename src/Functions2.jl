@@ -124,3 +124,21 @@ function add_quantile(df, columnsymbol; quantiles = [0, 0.5, 0.75, 0.9])
     
     df
 end
+
+##### Improvements on subsetting by padj, now there in no need to construct a new_array
+# function everytime we join a new dataframe
+
+function subset_by_padj_when_NA(dataframe, padj; dataset = 1)
+    if dataset == 1
+      new_dataframe = exclude_rows_with_NA(dataframe, :padj)
+      new_dataframe = new_dataframe[new_dataframe[:padj] .<= padj, :]
+    else
+        dataset -= 1
+        namecolumn = string("padj_", string(dataset))
+        namecolumn = convert(Symbol, namecolumn)
+        new_dataframe = exclude_rows_with_NA(dataframe, :padj)
+        new_dataframe = new_dataframe[new_dataframe[namecolumn] .<= padj, :]
+    end
+
+    return new_dataframe
+end
